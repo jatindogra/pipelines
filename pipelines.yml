@@ -1,20 +1,8 @@
-resources:
-  - name: myAppRepo
-    type: GitRepo
-    configuration:
-      gitProvider: github   # replace with your integration
-      path: ~jatindogra/pipelines    # replace with your repository name
-      branches:
-        include: ^master$
-
 pipelines:
   - name: pipeline_hello_world
     steps:
       - name: step_1
         type: Bash
-        configuration:
-          inputResources:
-            - name: myAppRepo
         execution:
           onStart:
             - echo "this is onStart"

@@ -7,7 +7,7 @@ pipelines:
           onStart:
             - echo "this is onStart"
           onExecute:
-            - echo $PATH
+            - asd
             - printenv
           onSuccess:
             - asd

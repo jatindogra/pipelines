@@ -5,12 +5,15 @@ pipelines:
         type: Bash
         configuration:
           integrations:
-            - name: docker
+            - name: artifactory
         execution:
           onStart:
             - echo "this is onStart"
           onExecute:
             - printenv
+            - touch foo
+            - jfrog rt u foo example-repo-local/foo
+            - jfrog rt del example-repo-local/foo
           onSuccess:
             - echo "this is onSuccess"
           onComplete:

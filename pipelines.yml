@@ -10,6 +10,8 @@ pipelines:
             - asd
             - printenv
           onSuccess:
-            - asd
+            - echo "this is onSuccess"
           onComplete:
-            - echo "this is onComplete"
+            - asd
+          onFailure:
+            - echo "this is onFailure"

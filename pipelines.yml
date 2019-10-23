@@ -11,6 +11,7 @@ pipelines:
             - echo "this is onStart"
           onExecute:
             - printenv
+            - cat /var/opt/jfrog/pipelines/pipelines/pipeline_hello_world/runs/11/steps/step_1/11/stepletScript.sh
             - touch foo
             - jfrog rt u foo example-repo-local/foo
             - jfrog rt del example-repo-local/foo

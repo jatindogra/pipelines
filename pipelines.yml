@@ -3,11 +3,13 @@ pipelines:
     steps:
       - name: step_1
         type: Bash
+        configuration:
+          integrations:
+            - name: docker
         execution:
           onStart:
             - echo "this is onStart"
           onExecute:
-            - asd
             - printenv
           onSuccess:
             - echo "this is onSuccess"

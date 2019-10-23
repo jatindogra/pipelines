@@ -11,3 +11,5 @@ pipelines:
             - printenv
           onSuccess:
             - echo "this is onSuccess"
+          onComplete:
+            - echo "this is onComplete"

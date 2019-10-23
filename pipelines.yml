@@ -10,6 +10,6 @@ pipelines:
             - echo $PATH
             - printenv
           onSuccess:
-            - echo "this is onSuccess"
+            - asd
           onComplete:
             - echo "this is onComplete"

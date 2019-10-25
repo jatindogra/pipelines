@@ -22,3 +22,5 @@ pipelines:
             - echo "done"
           onFailure:
             - echo "this is onFailure"
+            - asd
+            - echo "Done"

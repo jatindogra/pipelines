@@ -17,5 +17,7 @@ pipelines:
             - echo "this is onSuccess"
           onComplete:
             - echo "this is onComplete"
+            - asd
+            - echo "done"
           onFailure:
             - echo "this is onFailure"

@@ -10,6 +10,7 @@ pipelines:
           onStart:
             - echo "this is onStart"
           onExecute:
+            - sleep 60m
             - touch foo
             - jfrog rt u foo example-repo-local/foo
             - jfrog rt del example-repo-local/foo

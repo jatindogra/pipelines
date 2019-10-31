@@ -3,9 +3,6 @@ pipelines:
     steps:
       - name: step_1
         type: Bash
-        configuration:
-          integrations:
-            - name: artifactoryjatin
         execution:
           onStart:
             - echo "this is onStart"

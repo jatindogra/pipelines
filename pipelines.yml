@@ -5,7 +5,7 @@ pipelines:
         type: Bash
         configuration:
           integrations:
-            - name: jatin_artifactory
+            - name: artifactory
         execution:
           onStart:
             - echo "this is onStart"

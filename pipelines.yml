@@ -17,6 +17,9 @@ pipelines:
             
       - name: step_2
         type: Bash
+        configuration:
+         inputSteps:
+           - name: step_1
         execution:
          onExecute:
            - add_run_variables first_stepid=$step_id

@@ -23,7 +23,7 @@ pipelines:
         execution:
          onExecute:
            - echo "foo=bar" > state.txt
-           - add_run_files state.txt
+           - add_run_files state.txt state_file
            #- add_run_variables ${first_stepid}_buildNumber=${run_number}
 
       - name: step_3
@@ -34,5 +34,5 @@ pipelines:
         execution:
          onExecute:
            - echo "Hello world"
-           - restore_run_files state.txt
+           - restore_run_files state_file state.txt
            #- echo ${first_stepid}_buildNumber

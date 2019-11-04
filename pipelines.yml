@@ -27,7 +27,7 @@ pipelines:
          type: Bash
          configuration:
            inputSteps:
-             - name: step_4
+             - name: step_3
          execution:
            onExecute:
              - echo "Hello world"

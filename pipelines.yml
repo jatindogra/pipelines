@@ -23,7 +23,7 @@ pipelines:
         execution:
          onExecute:
            - add_run_variables first_stepid=$step_id
-           - add_run_variables ${first_stepid}_buildNumber=${run_number}
+           #- add_run_variables ${first_stepid}_buildNumber=${run_number}
            - sleep 30m
 
       - name: step_3
@@ -35,4 +35,4 @@ pipelines:
          onExecute:
            - echo "Hello world"
            - echo $first_stepid
-           - echo ${first_stepid}_buildNumber
+           #- echo ${first_stepid}_buildNumber

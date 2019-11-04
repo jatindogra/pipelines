@@ -15,21 +15,21 @@ pipelines:
           onFailure:
             - echo "this is onFailure"
             
-       - name: step_2
-         type: Bash
-         execution:
-           onExecute:
-             - add_run_variables first_stepid=$step_id
-             - add_run_variables ${first_stepid}_buildNumber=${run_number}
-             - sleep 30m
+      - name: step_2
+        type: Bash
+        execution:
+         onExecute:
+           - add_run_variables first_stepid=$step_id
+           - add_run_variables ${first_stepid}_buildNumber=${run_number}
+           - sleep 30m
 
-       - name: step_3
-         type: Bash
-         configuration:
-           inputSteps:
-             - name: step_3
-         execution:
-           onExecute:
-             - echo "Hello world"
-             - echo $first_stepid
-             - echo ${first_stepid}_buildNumber
+      - name: step_3
+        type: Bash
+        configuration:
+         inputSteps:
+           - name: step_3
+        execution:
+         onExecute:
+           - echo "Hello world"
+           - echo $first_stepid
+           - echo ${first_stepid}_buildNumber

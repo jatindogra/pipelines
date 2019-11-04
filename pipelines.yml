@@ -23,7 +23,7 @@ pipelines:
              - add_run_variables ${first_stepid}_buildNumber=${run_number}
              - sleep 30m
 
-       - name: step_5
+       - name: step_3
          type: Bash
          configuration:
            inputSteps:

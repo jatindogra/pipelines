@@ -22,7 +22,7 @@ pipelines:
            - name: step_1
         execution:
          onExecute:
-           - add_run_files myfile cachefile.txt
+           - add_run_files state.txt statefile.txt
            #- add_run_variables ${first_stepid}_buildNumber=${run_number}
 
       - name: step_3

@@ -33,5 +33,5 @@ pipelines:
         execution:
          onExecute:
            - echo "Hello world"
-           - restore_run_files myfile cachefile.txt
+           - restore_run_files myfile statefile.txt
            #- echo ${first_stepid}_buildNumber

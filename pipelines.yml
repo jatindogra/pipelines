@@ -22,7 +22,7 @@ pipelines:
            - name: step_1
         execution:
          onExecute:
-           - add_run_variables first_stepid=$step_id
+           - add_run_files myfile cachefile.txt
            #- add_run_variables ${first_stepid}_buildNumber=${run_number}
 
       - name: step_3
@@ -33,5 +33,5 @@ pipelines:
         execution:
          onExecute:
            - echo "Hello world"
-           - echo $first_stepid
+           - restore_run_files myfile cachefile.txt
            #- echo ${first_stepid}_buildNumber

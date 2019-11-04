@@ -7,17 +7,29 @@ pipelines:
           onStart:
             - echo "this is onStart"
           onExecute:
-            - sleep 60m
-            - touch foo
-            - jfrog rt u foo example-repo-local/foo
-            - jfrog rt del example-repo-local/foo
+            - echo "execute"
           onSuccess:
             - echo "this is onSuccess"
-            - asd
-            - echo "Asd?"
           onComplete:
             - echo "this is onComplete"
-            - asd
           onFailure:
             - echo "this is onFailure"
-            - asd
+            
+       - name: step_2
+         type: Bash
+         execution:
+           onExecute:
+             - add_run_variables first_stepid=$step_id
+             - add_run_variables ${first_stepid}_buildNumber=${run_number}
+             - sleep 30m
+
+       - name: step_5
+         type: Bash
+         configuration:
+           inputSteps:
+             - name: step_4
+         execution:
+           onExecute:
+             - echo "Hello world"
+             - echo $first_stepid
+             - echo ${first_stepid}_buildNumber

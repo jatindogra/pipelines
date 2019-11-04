@@ -30,7 +30,7 @@ pipelines:
         type: Bash
         configuration:
          inputSteps:
-           - name: step_3
+           - name: step_2
         execution:
          onExecute:
            - echo "Hello world"

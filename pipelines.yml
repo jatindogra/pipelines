@@ -39,4 +39,4 @@ pipelines:
          onComplete:
           # Preserve file for the next run of the pipeline
           - echo "state=pipeline" > pipeline_state.txt
-          - add_pipeline_files pipeline_state_file pipeline_state.txt
+          - add_pipeline_files pipeline_state.txt pipeline_state_file

@@ -6,6 +6,7 @@ pipelines:
         execution:
           onStart:
             - echo "this is onStart"
+            - restore_pipeline_files pipeline_state_file pipeline_state.txt
           onExecute:
             - echo "execute"
           onSuccess:

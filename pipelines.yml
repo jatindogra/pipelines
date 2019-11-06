@@ -8,7 +8,6 @@ pipelines:
             - echo "this is onStart"
           onExecute:
             - echo "execute"
-            - restore_pipeline_files pipeline_state_file pipeline_state.txt
           onSuccess:
             - echo "this is onSuccess"
           onComplete:
@@ -37,16 +36,7 @@ pipelines:
            - echo "Hello world"
            - restore_run_files state_file state.txt
            #- echo ${first_stepid}_buildNumber
- 
-     - name: final_step
-       type: Bash
-       configuration:
-         inputSteps:
-           - name: step_3
-       execution:
-         onExecute:
-           echo "Hello world"
          onComplete:
-           # Preserve file for the next run of the pipeline
-           - echo "state=pipeline" > pipeline_state.txt
-           - add_pipeline_files pipeline_state_file pipeline_state.txt
+          # Preserve file for the next run of the pipeline
+          - echo "state=pipeline" > pipeline_state.txt
+          - add_pipeline_files pipeline_state_file pipeline_state.txt

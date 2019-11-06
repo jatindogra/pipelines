@@ -7,6 +7,8 @@ pipelines:
           onStart:
             - echo "this is onStart"
             - restore_pipeline_files pipeline_state_file pipeline_state.txt
+            - echo "cache=file" > cachefile.txt
+            - add_cache_files cachefile.txt cache_file
           onExecute:
             - echo "execute"
           onSuccess:

@@ -10,7 +10,6 @@ pipelines:
             - echo "cache=file" > cachefile.txt
             - add_cache_files cachefile.txt cache_file
             - printenv
-            - sleep 10m
           onExecute:
             - echo "execute"
           onSuccess:

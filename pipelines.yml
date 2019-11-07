@@ -28,6 +28,8 @@ pipelines:
          onExecute:
            - echo "foo=bar" > state.txt
            - add_run_files state.txt state_file
+           - echo "cache=file2" > cachefile2.txt
+           - add_cache_files cachefile2.txt cache_file2
            #- add_run_variables ${first_stepid}_buildNumber=${run_number}
 
       - name: step_3

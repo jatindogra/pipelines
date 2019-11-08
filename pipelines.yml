@@ -1,29 +1,29 @@
 pipelines:
   - name: pipeline_hello_world
     steps:
-      - name: step_1
-        type: Bash
-        execution:
-          onStart:
-            - echo "this is onStart"
-            - restore_pipeline_files pipeline_state_file pipeline_state.txt
-            - echo "cache=file" > cachefile.txt
-            - add_cache_files cachefile.txt cache_file
-            - printenv
-          onExecute:
-            - echo "execute"
-          onSuccess:
-            - echo "this is onSuccess"
-          onComplete:
-            - echo "this is onComplete"
-          onFailure:
-            - echo "this is onFailure"
+#       - name: step_1
+#         type: Bash
+#         execution:
+#           onStart:
+#             - echo "this is onStart"
+#             - restore_pipeline_files pipeline_state_file pipeline_state.txt
+#             - echo "cache=file" > cachefile.txt
+#             - add_cache_files cachefile.txt cache_file
+#             - printenv
+#           onExecute:
+#             - echo "execute"
+#           onSuccess:
+#             - echo "this is onSuccess"
+#           onComplete:
+#             - echo "this is onComplete"
+#           onFailure:
+#             - echo "this is onFailure"
             
       - name: step_2
         type: Bash
-        configuration:
-         inputSteps:
-           - name: step_1
+#         configuration:
+#          inputSteps:
+#            - name: step_1
         execution:
          onExecute:
            - echo "foo=bar" > state.txt

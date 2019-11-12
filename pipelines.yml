@@ -1,3 +1,10 @@
+resources:
+  - name: jatinrepo
+    type: GitRepo
+    configuration:
+      gitProvider: github
+      path: jatindogra/ymlTest
+      
 pipelines:
   - name: pipeline_hello_world
     steps:
@@ -21,9 +28,9 @@ pipelines:
             
       - name: step_2
         type: Bash
-#         configuration:
-#          inputSteps:
-#            - name: step_1
+        configuration:
+         inputResources:
+           - name: jatinrepo
         execution:
          onExecute:
            - echo "foo=bar" > state.txt

@@ -1,10 +1,4 @@
 resources:
-  - name: jatinrepo
-    type: GitRepo
-    configuration:
-      gitProvider: github
-      path: jatindogra/ymlTest
-
   - name: buildInfoRes
     type: BuildInfo
     configuration:

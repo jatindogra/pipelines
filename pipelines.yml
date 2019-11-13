@@ -11,7 +11,7 @@ resources:
       sourceArtifactory: artifactory
       buildName: jatin
       buildNumber: 1
-      externalCI: jenkins
+#       externalCI: jenkins
       
 pipelines:
   - name: pipeline_hello_world

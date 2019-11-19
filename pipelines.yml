@@ -1,11 +1,11 @@
 resources:
-  - name: buildInfoRes
-    type: BuildInfo
-    configuration:
-      sourceArtifactory: artifactory
-      buildName: jatin
-      buildNumber: 1
-      externalCI: jenkins
+#   - name: buildInfoRes
+#     type: BuildInfo
+#     configuration:
+#       sourceArtifactory: artifactory
+#       buildName: jatin
+#       buildNumber: 1
+#       externalCI: jenkins
       
 pipelines:
   - name: pipeline_hello_world
@@ -43,9 +43,9 @@ pipelines:
 
       - name: step_3
         type: Bash
-        configuration:
-         inputSteps:
-           - name: step_2
+#         configuration:
+#          inputSteps:
+#            - name: step_2
         execution:
          onExecute:
            - echo "Hello world"

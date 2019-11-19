@@ -30,9 +30,9 @@ pipelines:
             
       - name: step_2
         type: Bash
-        configuration:
-         inputResources:
-           - name: buildInfoRes
+#         configuration:
+#          inputResources:
+#            - name: buildInfoRes
         execution:
          onExecute:
            - echo "foo=bar" > state.txt
@@ -43,9 +43,9 @@ pipelines:
 
       - name: step_3
         type: Bash
-#         configuration:
-#          inputSteps:
-#            - name: step_2
+        configuration:
+         inputSteps:
+           - name: step_2
         execution:
          onExecute:
            - echo "Hello world"

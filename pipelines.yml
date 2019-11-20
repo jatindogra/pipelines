@@ -14,7 +14,7 @@ pipelines:
         type: image
         image:
           custom:
-            name: jfrog/pipelines-u16node
+            name: pipelines-docker.jfrog.io/jfrog/pipelines-u16node
             tag: base
             sourceRepository: pipelines-docker
             registry: artifactory

@@ -90,3 +90,4 @@ pipelines:
         execution:
           onExecute:
             - echo 'Hello World!!!'
+            - docker pull jatindogra/scopstask

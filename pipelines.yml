@@ -16,7 +16,7 @@ pipelines:
           custom:
             name: jfrog/pipelines-u16node
             tag: base
-            sourceRepository: pipelines-docker.jfrog.io
+            sourceRepository: pipelines-docker
             registry: artifactory
     steps:
 #       - name: step_1

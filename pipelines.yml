@@ -68,6 +68,8 @@ pipelines:
       - name: basic
         type: Bash
         configuration:
+          integrations:
+            - name: docker
           runtime:
             type: image
             image:

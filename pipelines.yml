@@ -9,7 +9,8 @@ resources:
       
 pipelines:
   - name: pipeline_hello_world
-    runtime:
+    configuration:
+      runtime:
       type: image
       image:
         custom:

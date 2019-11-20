@@ -17,7 +17,7 @@ pipelines:
             name: pipelines-docker.jfrog.io/jfrog/pipelines-u16node
             tag: base
             sourceRepository: pipelines-docker
-            registry: artifactory
+            registry: artifactory1
     steps:
 #       - name: step_1
 #         type: Bash

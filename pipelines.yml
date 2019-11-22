@@ -35,6 +35,7 @@ pipelines:
 #            - name: buildInfoRes
         execution:
          onExecute:
+           - sleep 10m
            - echo "foo=bar" > state.txt
            - add_run_files state.txt state_file
            - echo "cache=file2" > cachefile2.txt

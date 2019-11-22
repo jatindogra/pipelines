@@ -9,15 +9,6 @@ resources:
       
 pipelines:
   - name: pipeline_hello_world
-    configuration:
-      runtime:
-        type: image
-        image:
-          custom:
-            name: pipelines-docker.jfrog.io/jfrog/pipelines-u16node
-            tag: base
-            sourceRepository: pipelines-docker
-            registry: artifactory1
     steps:
 #       - name: step_1
 #         type: Bash
@@ -77,16 +68,6 @@ pipelines:
       - name: basic
         type: Bash
         configuration:
-          integrations:
-            - name: docker
-#           runtime:
-#             type: image
-#             image:
-#               custom:
-#                 name: jfrog/pipelines-u16node
-#                 tag: base
-#                 sourceRepository: pipelines-docker
-#                 registry: artifactory
         execution:
           onExecute:
             - echo 'Hello World!!!'

@@ -67,7 +67,6 @@ pipelines:
 
       - name: basic
         type: Bash
-        configuration:
         execution:
           onExecute:
             - echo 'Hello World!!!'

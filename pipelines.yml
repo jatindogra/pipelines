@@ -90,13 +90,13 @@ pipelines:
             - echo 'Hello World!!!'
  
        - name: basic3
-        type: Bash
-        configuration:
-         inputSteps:
-           - name: basic2
-        execution:
-          onExecute:
-            - echo 'Hello World!!!'
+         type: Bash
+         configuration:
+          inputSteps:
+            - name: basic2
+         execution:
+           onExecute:
+             - echo 'Hello World!!!'
             
       - name: basic4
         type: Bash

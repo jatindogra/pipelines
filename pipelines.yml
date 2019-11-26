@@ -74,8 +74,8 @@ pipelines:
       - name: basic1
         type: Bash
         configuration:
-         inputSteps:
-           - name: basic
+          inputSteps:
+            - name: basic
         execution:
           onExecute:
             - echo 'Hello World!!!'
@@ -83,8 +83,8 @@ pipelines:
       - name: basic2
         type: Bash
         configuration:
-         inputSteps:
-           - name: basic1
+          inputSteps:
+            - name: basic1
         execution:
           onExecute:
             - echo 'Hello World!!!'
@@ -92,8 +92,8 @@ pipelines:
        - name: basic3
          type: Bash
          configuration:
-          inputSteps:
-            - name: basic2
+           inputSteps:
+             - name: basic2
          execution:
            onExecute:
              - echo 'Hello World!!!'
@@ -101,8 +101,8 @@ pipelines:
       - name: basic4
         type: Bash
         configuration:
-         inputSteps:
-           - name: basic3
+          inputSteps:
+            - name: basic3
         execution:
           onExecute:
             - echo 'Hello World!!!'

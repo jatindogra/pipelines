@@ -69,6 +69,8 @@ pipelines:
         type: Bash
         configuration:
           nodePool: u16nodepool
+          integrations:
+            - name: github
         execution:
           onExecute:
             - echo 'Hello from u16!!!'
@@ -77,6 +79,8 @@ pipelines:
         type: Bash
         configuration:
           nodePool: u18nodepool
+          integrations:
+            - name: github
         execution:
           onExecute:
             - echo 'Hello from u18!!!'
@@ -85,6 +89,8 @@ pipelines:
         type: Bash
         configuration:
           nodePool: c7nodepool
+          integrations:
+            - name: github
         execution:
           onExecute:
             - echo 'Hello from c7!!!'

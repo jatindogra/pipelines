@@ -1,11 +1,9 @@
 resources:
-#   - name: buildInfoRes
-#     type: BuildInfo
-#     configuration:
-#       sourceArtifactory: artifactory
-#       buildName: jatin
-#       buildNumber: 1
-#       externalCI: jenkins
+  - name: gitRes
+    type: GitRepo
+    configuration:
+      gitProvider: github
+      path: jatindogra/pipelines
       
 pipelines:
   - name: pipeline_hello_world
@@ -69,8 +67,8 @@ pipelines:
         type: Bash
         configuration:
           nodePool: u16nodepool
-          integrations:
-            - name: github
+          inputResources:
+            - name: gitRes
         execution:
           onExecute:
             - echo 'Hello from u16!!!'
@@ -79,8 +77,8 @@ pipelines:
         type: Bash
         configuration:
           nodePool: u18nodepool
-          integrations:
-            - name: github
+          inputResources:
+            - name: gitRes
         execution:
           onExecute:
             - echo 'Hello from u18!!!'
@@ -89,8 +87,8 @@ pipelines:
         type: Bash
         configuration:
           nodePool: c7nodepool
-          integrations:
-            - name: github
+          inputResources:
+            - name: gitRes
         execution:
           onExecute:
             - echo 'Hello from c7!!!'

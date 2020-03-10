@@ -65,7 +65,7 @@ pipelines:
 #          onExecute:
 #            - echo "Hello world"
 
-      - name: basic-u16
+      - name: basic_u16
         type: Bash
         configuration:
           nodePool: u16nodepool
@@ -73,7 +73,7 @@ pipelines:
           onExecute:
             - echo 'Hello from u16!!!'
 
-      - name: basic-u18
+      - name: basic_u18
         type: Bash
         configuration:
           nodePool: u18nodepool
@@ -81,7 +81,7 @@ pipelines:
           onExecute:
             - echo 'Hello from u18!!!'
  
-      - name: basic-c7
+      - name: basic_c7
         type: Bash
         configuration:
           nodePool: c7nodepool

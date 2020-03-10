@@ -65,8 +65,26 @@ pipelines:
 #          onExecute:
 #            - echo "Hello world"
 
-      - name: basic
+      - name: basic-u16
         type: Bash
+        configuration:
+          nodePool: u16nodepool
         execution:
           onExecute:
-            - echo 'Hello World!!!'
+            - echo 'Hello from u16!!!'
+
+      - name: basic-u18
+        type: Bash
+        configuration:
+          nodePool: u18nodepool
+        execution:
+          onExecute:
+            - echo 'Hello from u18!!!'
+ 
+      - name: basic-c7
+        type: Bash
+        configuration:
+          nodePool: c7nodepool
+        execution:
+          onExecute:
+            - echo 'Hello from c7!!!'

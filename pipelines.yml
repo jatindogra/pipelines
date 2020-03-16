@@ -86,7 +86,7 @@ pipelines:
           nodePool: u18nodepool
           inputResources:
             - name: gitRes
-          outputResource:
+          outputResources:
             - name: gitRes2
         execution:
           onExecute:

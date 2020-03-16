@@ -4,7 +4,12 @@ resources:
     configuration:
       gitProvider: github
       path: jatindogra/pipelines
-      
+ 
+  - name: gitRes2
+    type: GitRepo
+    configuration:
+      gitProvider: github
+      path: jatindogra/ymlTest
 pipelines:
   - name: pipeline_hello_world
     steps:
@@ -69,6 +74,8 @@ pipelines:
           nodePool: u16nodepool
           inputResources:
             - name: gitRes
+          outputResources:
+            - name: gitRes2
         execution:
           onExecute:
             - echo 'Hello from u16!!!'
@@ -79,6 +86,8 @@ pipelines:
           nodePool: u18nodepool
           inputResources:
             - name: gitRes
+          outputResource:
+            - name: gitRes2
         execution:
           onExecute:
             - echo 'Hello from u18!!!'
@@ -89,6 +98,8 @@ pipelines:
           nodePool: c7nodepool
           inputResources:
             - name: gitRes
+          outputResources:
+            - name: gitRes2
         execution:
           onExecute:
             - echo 'Hello from c7!!!'

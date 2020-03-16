@@ -113,7 +113,7 @@ pipelines:
           onExecute:
             - echo 'Hello'
  
-       - name: basic1
+      - name: basic1
         type: Bash
         configuration:
           inputResources:

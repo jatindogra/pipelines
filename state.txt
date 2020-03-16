@@ -1,1 +1,1 @@
-foo=boo1
+foo=boo

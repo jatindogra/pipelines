@@ -72,8 +72,8 @@ pipelines:
         type: Bash
         configuration:
           nodePool: u16nodepool
-          inputResources:
-            - name: gitRes
+          inputSteps:
+            - name: basic
           outputResources:
             - name: gitRes2
         execution:
@@ -84,8 +84,8 @@ pipelines:
         type: Bash
         configuration:
           nodePool: u18nodepool
-          inputResources:
-            - name: gitRes
+          inputSteps:
+            - name: basic
           outputResources:
             - name: gitRes2
         execution:
@@ -96,10 +96,18 @@ pipelines:
         type: Bash
         configuration:
           nodePool: c7nodepool
-          inputResources:
-            - name: gitRes
+          inputSteps:
+            - name: basic
           outputResources:
             - name: gitRes2
         execution:
           onExecute:
             - echo 'Hello from c7!!!'
+
+      - name: basic
+        type: Bash
+        configuration:
+          nodePool: c7nodepool
+        execution:
+          onExecute:
+            - echo 'Hello'

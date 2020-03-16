@@ -73,6 +73,8 @@ pipelines:
         configuration:
           inputSteps:
             - name: basic
+          inputResources:
+            - name: gitRes
           outputResources:
             - name: gitRes2
         execution:
@@ -84,6 +86,8 @@ pipelines:
         configuration:
           inputSteps:
             - name: basic
+          inputResources:
+            - name: gitRes
           outputResources:
             - name: gitRes2
         execution:
@@ -95,6 +99,8 @@ pipelines:
         configuration:
           inputSteps:
             - name: basic
+          inputResources:
+            - name: gitRes
           outputResources:
             - name: gitRes2
         execution:
@@ -103,6 +109,31 @@ pipelines:
 
       - name: basic
         type: Bash
+        execution:
+          onExecute:
+            - echo 'Hello'
+ 
+       - name: basic1
+        type: Bash
+        configuration:
+          inputResources:
+            - name: gitRes2
+        execution:
+          onExecute:
+            - echo 'Hello'
+      - name: basic2
+        type: Bash
+        configuration:
+          inputResources:
+            - name: gitRes2
+        execution:
+          onExecute:
+            - echo 'Hello'
+      - name: basic3
+        type: Bash
+        configuration:
+          inputResources:
+            - name: gitRes2
         execution:
           onExecute:
             - echo 'Hello'

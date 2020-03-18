@@ -27,41 +27,9 @@ pipelines:
 #             - echo "this is onComplete"
 #           onFailure:
 #             - echo "this is onFailure"
-            
-      - name: step_2
-        type: Bash
-#         configuration:
-#          inputResources:
-#            - name: buildInfoRes
-        execution:
-         onExecute:
-           - sleep 10m
-           - echo "foo=bar" > state.txt
-           - add_run_files state.txt state_file
-           - echo "cache=file2" > cachefile2.txt
-           - add_cache_files cachefile2.txt cache_file2
-           #- add_run_variables ${first_stepid}_buildNumber=${run_number}
 
-      - name: step_3
+      - name: step_1
         type: Bash
-        configuration:
-         inputSteps:
-           - name: step_2
-        execution:
-         onExecute:
-           - echo "Hello world"
-           - restore_run_files state_file state.txt
-           #- echo ${first_stepid}_buildNumber
-         onComplete:
-          # Preserve file for the next run of the pipeline
-          - echo "state=pipeline" > pipeline_state.txt
-          - add_pipeline_files pipeline_state.txt pipeline_state_file
-
-      - name: step_4
-        type: Bash
-        configuration:
-         inputSteps:
-           - name: step_3
         execution:
          onExecute:
            - echo "Hello world"

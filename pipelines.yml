@@ -32,4 +32,4 @@ pipelines:
         type: Bash
         execution:
          onExecute:
-           - echo "Hello world"
+           - ech

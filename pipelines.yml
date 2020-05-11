@@ -12,6 +12,14 @@ resources:
       path: jatindogra/ymlTest
 pipelines:
   - name: pipeline_hello_world
+    configuration:
+      runtime:      
+        type: image
+        image:
+          custom:
+            name: docker.bintray.io/jfrog/pipelines-u18node
+            tag: 10.18.0
+            options: "-v /certs/client:/certs/client"
     steps:
 #       - name: step_1
 #         type: Bash
@@ -68,45 +76,6 @@ pipelines:
 #          onExecute:
 #            - echo "Hello world"
 
-      - name: basic_u16
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: basic
-          inputResources:
-            - name: gitRes
-          outputResources:
-            - name: gitRes2
-        execution:
-          onExecute:
-            - echo 'Hello from u16!!!'
-
-      - name: basic_u18
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: basic
-          inputResources:
-            - name: gitRes
-          outputResources:
-            - name: gitRes2
-        execution:
-          onExecute:
-            - echo 'Hello from u18!!!'
- 
-      - name: basic_c7
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: basic
-          inputResources:
-            - name: gitRes
-          outputResources:
-            - name: gitRes2
-        execution:
-          onExecute:
-            - echo 'Hello from c7!!!'
-
       - name: basic
         type: Bash
         execution:
@@ -114,27 +83,3 @@ pipelines:
             - echo 'Hello'
             - docker ps
  
-      - name: basic1
-        type: Bash
-        configuration:
-          inputResources:
-            - name: gitRes2
-        execution:
-          onExecute:
-            - echo 'Hello'
-      - name: basic2
-        type: Bash
-        configuration:
-          inputResources:
-            - name: gitRes2
-        execution:
-          onExecute:
-            - echo 'Hello'
-      - name: basic3
-        type: Bash
-        configuration:
-          inputResources:
-            - name: gitRes2
-        execution:
-          onExecute:
-            - echo 'Hello'

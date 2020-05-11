@@ -80,7 +80,7 @@ pipelines:
         type: Bash
         execution:
           onStart:
-            - add_run_variable foo="bar"
+            - add_run_variables foo="bar"
           onExecute:
             - echo 'Hello'
             - docker ps

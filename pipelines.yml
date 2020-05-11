@@ -79,7 +79,12 @@ pipelines:
       - name: basic
         type: Bash
         execution:
+          onStart:
+            - add_run_variable foo="bar"
           onExecute:
             - echo 'Hello'
             - docker ps
+            - echo $foo
+            - echo foo
+            - printenv foo
  

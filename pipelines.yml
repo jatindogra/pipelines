@@ -112,6 +112,7 @@ pipelines:
         execution:
           onExecute:
             - echo 'Hello'
+            - docker ps
  
       - name: basic1
         type: Bash

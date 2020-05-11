@@ -81,6 +81,7 @@ pipelines:
         execution:
           onExecute:
             - echo 'Hello'
-            - sleep 3m
             - docker ps
+            - sleep 3m
+
  

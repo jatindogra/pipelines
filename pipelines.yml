@@ -1,5 +1,5 @@
 pipelines:
-  - name: pipeline_hello_world
+  - name: jatin_custom_pipelines
     configuration:
       runtime:      
         type: image

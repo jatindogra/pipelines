@@ -1,15 +1,3 @@
-resources:
-  - name: gitRes
-    type: GitRepo
-    configuration:
-      gitProvider: github
-      path: jatindogra/pipelines
- 
-  - name: gitRes2
-    type: GitRepo
-    configuration:
-      gitProvider: github
-      path: jatindogra/ymlTest
 pipelines:
   - name: pipeline_hello_world
     configuration:

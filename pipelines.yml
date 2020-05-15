@@ -1,13 +1,5 @@
 pipelines:
   - name: jatin_custom_pipelines
-    configuration:
-      runtime:      
-        type: image
-        image:
-          custom:
-            name: docker.bintray.io/jfrog/pipelines-u18node
-            tag: 10.18.0
-            #options: "-v /certs/client:/certs/client  -e DOCKER_TLS_VERIFY=1 -e DOCKER_CERT_PATH=/certs/client"
     steps:
 #       - name: step_1
 #         type: Bash
@@ -68,7 +60,7 @@ pipelines:
         type: Bash
         configuration:
           integrations:
-            - azkeys
+            - name: azkeys
         execution:
           onStart:
             - add_run_variables foo="bar"

@@ -66,11 +66,15 @@ pipelines:
 
       - name: basic
         type: Bash
+        configuration:
+          integrations:
+            - azkeys
         execution:
           onStart:
             - add_run_variables foo="bar"
           onExecute:
             - echo 'Hello'
+            - sleep 5m
             - docker ps
             - echo $foo
             - echo foo

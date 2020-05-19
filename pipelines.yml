@@ -66,9 +66,4 @@ pipelines:
             - add_run_variables foo="bar"
           onExecute:
             - echo 'Hello'
-            - sleep 5m
-            - docker ps
-            - echo $foo
-            - echo foo
-            - printenv foo
  

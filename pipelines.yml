@@ -8,7 +8,9 @@ resources:
 #       externalCI: jenkins
       
 pipelines:
-  - name: pipeline_hello_world
+  - name: pipeline_hello_world_2
+    configuration:
+      nodePool: jatintest   
     steps:
 #       - name: step_1
 #         type: Bash
@@ -32,4 +34,5 @@ pipelines:
         type: Bash
         execution:
          onExecute:
-           - ech
+           - sleep 2m
+           - echo "Test"

@@ -1,5 +1,7 @@
 pipelines:
   - name: jatin_custom_pipelines
+    configuration:
+      nodePool: jatin   
     steps:
 #       - name: step_1
 #         type: Bash
@@ -58,12 +60,8 @@ pipelines:
 
       - name: basic
         type: Bash
-        configuration:
-          integrations:
-            - name: azkeys
         execution:
-          onStart:
-            - add_run_variables foo="bar"
           onExecute:
+            - sleep 2m
             - echo 'Hello'
  

@@ -62,6 +62,6 @@ pipelines:
         type: Bash
         execution:
           onExecute:
-            - sleep 2m
+            - docker ps
             - echo 'Hello'
  

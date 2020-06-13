@@ -1,7 +1,7 @@
 pipelines:
   - name: jatin_custom_pipelines
     configuration:
-      nodePool: jatin   
+      nodePool: k8sPool   
     steps:
 #       - name: step_1
 #         type: Bash

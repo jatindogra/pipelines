@@ -58,6 +58,9 @@ pipelines:
 
       - name: basic
         type: Bash
+        configuration:
+          runtime:
+            type: host
         execution:
           onExecute:
             - echo 'Hello'

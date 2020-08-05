@@ -61,4 +61,5 @@ pipelines:
         execution:
           onExecute:
             - echo 'Hello'
+            - docker ps
  

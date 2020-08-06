@@ -58,6 +58,15 @@ pipelines:
 
       - name: basic
         type: Bash
+        configuration:
+          runtime:            
+            type: image
+            image: 
+              custom:
+                name: custom
+                tag: latest
+                registry: art            # if custom image is private, an integration is required for authentication
+                sourceRepository: docker-local
         execution:
           onExecute:
             - echo 'Hello'

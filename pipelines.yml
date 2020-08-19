@@ -1,3 +1,18 @@
+resources:
+  - name: pb_backapp_mvn
+    type: PropertyBag
+    configuration:
+      dockerAppTag: 2.0.0
+      release: false
+      biNumber: XXX
+  - name: fs_backapp_mvn
+    type: FileSpec
+    configuration:
+      sourceArtifactory: jatin_art
+      pattern: 'app-mvn-rc-local/**/multi-module-application*.jar'
+      target: app/multi-module-application-1.0.0.jar
+      props: "build.name=backapp_mvn;build.number=${res_pb_backapp_mvn_biNumber}"
+      flat: true
 pipelines:
   - name: jatin_custom_pipelines
     steps:
@@ -58,6 +73,9 @@ pipelines:
 
       - name: basic
         type: Bash
+        inputResources:
+          - name: pb_backapp_mvn
+          - name: fs_backapp_mvn
         execution:
           onExecute:
             - echo 'Hello'

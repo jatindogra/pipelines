@@ -8,7 +8,7 @@ resources:
   - name: fs_backapp_mvn
     type: FileSpec
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: art_master
       pattern: 'app-mvn-rc-local/**/multi-module-application*.jar'
       target: app/multi-module-application-1.0.0.jar
       props: "build.name=backapp_mvn;build.number=${res_pb_backapp_mvn_biNumber}"

@@ -79,6 +79,5 @@ pipelines:
           onExecute:
             - echo 'Hello'
             - docker ps
-            - echo printenv
-            - printenv
+            - find_resource_variable pb_backapp_mvn_2 biNumber2
  

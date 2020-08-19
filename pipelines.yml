@@ -80,4 +80,5 @@ pipelines:
             - echo 'Hello'
             - docker ps
             - find_resource_variable pb_backapp_mvn_2 biNumber2
+            - echo $res_pb_backapp_mvn_2_biNumber2
  

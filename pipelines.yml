@@ -79,4 +79,6 @@ pipelines:
           onExecute:
             - echo 'Hello'
             - docker ps
+            - echo printenv
+            - printenv
  

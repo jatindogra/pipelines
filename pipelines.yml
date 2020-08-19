@@ -10,7 +10,7 @@ resources:
     configuration:
       dockerAppTag: 2.0.0
       release: false
-      biNumber2: ${biNumber}
+      biNumber2: ${res_pb_backapp_mvn_biNumber}
 pipelines:
   - name: jatin_custom_pipelines
     steps:

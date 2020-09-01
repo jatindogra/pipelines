@@ -17,6 +17,7 @@ pipelines:
            - echo "foo=bar"
          onSuccess:
            - printenv
+           - ls
            - pushd $res_jatin_gitrepo_resourcePath
            - ls
            - ls -lh

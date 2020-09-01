@@ -1,49 +1,17 @@
-resources:
-  - name: pb_backapp_mvn
-    type: PropertyBag
-    configuration:
-      dockerAppTag: 2.0.0
-      release: false
-      biNumber: XXX
-  - name: pb_backapp_mvn_2
-    type: PropertyBag
-    configuration:
-      dockerAppTag: 2.0.0
-      release: false
-      biNumber2: ${res_pb_backapp_mvn_biNumber}
 pipelines:
   - name: jatin_custom_pipelines
-    steps:
-#       - name: step_1
-#         type: Bash
-#         execution:
-#           onStart:
-#             - echo "this is onStart"
-#             - restore_pipeline_files pipeline_state_file pipeline_state.txt
-#             - echo "cache=file" > cachefile.txt
-#             - add_cache_files cachefile.txt cache_file
-#             - printenv
-#           onExecute:
-#             - echo "execute"
-#           onSuccess:
-#             - echo "this is onSuccess"
-#           onComplete:
-#             - echo "this is onComplete"
-#           onFailure:
-#             - echo "this is onFailure"
-            
-#       - name: step_2
-#         type: Bash
-#         configuration:
-#          inputResources:
-#            - name: buildInfoRes
-#         execution:
-#          onExecute:
-#            - echo "foo=bar" > state.txt
+    steps:  
+      - name: step_2
+        type: Bash
+        configuration:
+         inputResources:
+           - name: buildInfoRes
+        execution:
+         onExecute:
+           - echo "foo=bar"
+         onSuccess:
+           - printenv
 #            - add_run_files state.txt state_file
-#            - echo "cache=file2" > cachefile2.txt
-#            - add_cache_files cachefile2.txt cache_file2
-#            #- add_run_variables ${first_stepid}_buildNumber=${run_number}
 
 #       - name: step_3
 #         type: Bash
@@ -54,31 +22,6 @@ pipelines:
 #          onExecute:
 #            - echo "Hello world"
 #            - restore_run_files state_file state.txt
-#            #- echo ${first_stepid}_buildNumber
-#          onComplete:
-#           # Preserve file for the next run of the pipeline
-#           - echo "state=pipeline" > pipeline_state.txt
-#           - add_pipeline_files pipeline_state.txt pipeline_state_file
 
-#       - name: step_4
-#         type: Bash
-#         configuration:
-#          inputSteps:
-#            - name: step_3
-#         execution:
-#          onExecute:
-#            - echo "Hello world"
 
-      - name: basic
-        type: Bash
-        configuration:
-          inputResources:
-            - name: pb_backapp_mvn
-            - name: pb_backapp_mvn_2
-        execution:
-          onExecute:
-            - echo 'Hello'
-            - docker ps
-            - find_resource_variable pb_backapp_mvn_2 biNumber2
-            - echo $res_pb_backapp_mvn_2_biNumber2
  

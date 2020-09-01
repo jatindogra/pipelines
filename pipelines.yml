@@ -11,7 +11,7 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - jatin_gitrepo
+            - name: jatin_gitrepo
         execution:
          onExecute:
            - echo "foo=bar"

@@ -32,6 +32,8 @@ pipelines:
          onStart:
            - mkdir -p restoredState
            - restore_run_files run_state restoredState
+           - pushd restoredState
+           - ls
          onExecute:
            - echo "Hello world"
 

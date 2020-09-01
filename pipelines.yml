@@ -15,6 +15,9 @@ pipelines:
         execution:
          onExecute:
            - echo "foo=bar"
+           - pushd $res_jatin_gitrepo_resourcePath
+           - ls
+           - ls -lh
          onSuccess:
            - printenv
            - ls

@@ -1,5 +1,5 @@
 resources:
-  - name: jatin_gitrepo
+  - name: jatin_gitrepo2
     type: GitRepo
     configuration:
       gitProvider: jatin_gh
@@ -11,17 +11,17 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: jatin_gitrepo
+            - name: jatin_gitrepo2
         execution:
          onExecute:
            - echo "foo=bar"
-           - pushd $res_jatin_gitrepo_resourcePath
+           - pushd $res_jatin_gitrepo2_resourcePath
            - ls
            - ls -lh
          onSuccess:
            - printenv
            - ls
-           - pushd $res_jatin_gitrepo_resourcePath
+           - pushd $res_jatin_gitrepo2_resourcePath
            - ls
            - ls -lh
 #            - add_run_files state.txt state_file

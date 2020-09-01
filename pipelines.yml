@@ -3,9 +3,6 @@ pipelines:
     steps:  
       - name: step_2
         type: Bash
-        configuration:
-         inputResources:
-           - name: buildInfoRes
         execution:
          onExecute:
            - echo "foo=bar"

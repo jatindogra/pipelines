@@ -17,8 +17,9 @@ pipelines:
            - echo "foo=bar"
          onSuccess:
            - printenv
-           - pushd $res_jatin_gitrepo_resourcePath/runState
+           - pushd $res_jatin_gitrepo_resourcePath
            - ls
+           - ls -lh
 #            - add_run_files state.txt state_file
 
 #       - name: step_3

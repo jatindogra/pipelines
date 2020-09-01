@@ -16,27 +16,25 @@ pipelines:
             - name: jatin_gitrepo2
         execution:
          onExecute:
-           - echo "foo=bar"
-           - pushd $res_jatin_gitrepo2_resourcePath
-           - ls
-           - ls -lh
+           - echo "hello"
          onSuccess:
            - printenv
            - ls
-           - pushd $res_jatin_gitrepo2_resourcePath
-           - ls
-           - ls -lh
-#            - add_run_files state.txt state_file
+           - pushd $res_jatin_gitrepo2_resourcePath/runState
+           - add_run_files $res_jatin_gitrepo2_resourcePath/runState run_state
 
-#       - name: step_3
-#         type: Bash
-#         configuration:
-#          inputSteps:
-#            - name: step_2
-#         execution:
-#          onExecute:
-#            - echo "Hello world"
-#            - restore_run_files state_file state.txt
+      - name: step_3
+        type: Bash
+        configuration:
+         inputSteps:
+           - name: step_2
+        execution:
+         onStart:
+           - pushd $res_jatin_gitrepo2_resourcePath
+           - mkdir -p restoredState
+           - restore_run_files run_state restoredState
+         onExecute:
+           - echo "Hello world"
 
 
  

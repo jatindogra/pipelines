@@ -10,7 +10,8 @@ pipelines:
       - name: step_2
         type: Bash
         configuration:
-         inputResources: jatin_gitrepo
+         inputResources:
+           - jatin_gitrepo
         execution:
          onExecute:
            - echo "foo=bar"

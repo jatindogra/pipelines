@@ -4,6 +4,8 @@ resources:
     configuration:
       gitProvider: jatin_gh
       path: jatindogra/pipelines
+      branches:
+       include: ^master$
 pipelines:
   - name: jatin_custom_pipelines
     steps:  

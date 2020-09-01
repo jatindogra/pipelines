@@ -20,10 +20,8 @@ pipelines:
          onSuccess:
            - printenv
            - ls
-           - mkdir -p createState
-           - add_run_files createState run_state
-#            - pushd $res_jatin_gitrepo2_resourcePath/runState
-#            - add_run_files $res_jatin_gitrepo2_resourcePath/runState run_state
+           - pushd $res_jatin_gitrepo2_resourcePath/runState
+           - add_run_files $res_jatin_gitrepo2_resourcePath/runState run_state
 
       - name: step_3
         type: Bash

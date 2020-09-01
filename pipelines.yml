@@ -30,7 +30,6 @@ pipelines:
            - name: step_2
         execution:
          onStart:
-           - pushd $res_jatin_gitrepo2_resourcePath
            - mkdir -p restoredState
            - restore_run_files run_state restoredState
          onExecute:

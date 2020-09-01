@@ -32,7 +32,7 @@ pipelines:
          onStart:
            - stateFolder='restoredState'
            - mkdir -p $stateFolder
-           - mkfir -p $stateFolder/classes
+           - mkdir -p $stateFolder/classes
            - restore_run_files run_state $stateFolder/classes
            - pushd $stateFolder/classes
            - ls

@@ -30,9 +30,11 @@ pipelines:
            - name: step_2
         execution:
          onStart:
-           - mkdir -p restoredState
-           - restore_run_files run_state restoredState
-           - pushd restoredState
+           - stateFolder='restoredState'
+           - mkdir -p $stateFolder
+           - mkfir -p $stateFolder/classes
+           - restore_run_files run_state $stateFolder/classes
+           - pushd $stateFolder/classes
            - ls
          onExecute:
            - echo "Hello world"

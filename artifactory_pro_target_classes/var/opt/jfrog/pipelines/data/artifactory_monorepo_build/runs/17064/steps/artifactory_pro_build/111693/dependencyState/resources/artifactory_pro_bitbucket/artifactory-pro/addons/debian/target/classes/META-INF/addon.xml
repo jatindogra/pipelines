@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2018 JFrog Ltd. All rights reserved.
+  ~ JFROG PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean class="org.artifactory.addon.debian.DebianAddonImpl"/>
+    <bean class="org.artifactory.addon.debian.DebianServiceImpl"/>
+    <bean class="org.artifactory.addon.debian.interceptor.DebianLocalInterceptor"/>
+    <bean class="org.artifactory.addon.debian.interceptor.DebianVirtualInterceptor"/>
+    <bean class="org.artifactory.addon.debian.remote.DebianIndexChecker"/>
+    <bean class="org.artifactory.addon.debian.remote.DebianRemoteInterceptor"/>
+    <bean class="org.artifactory.addon.debian.trashable.DebianNonTrashable"/>
+    <bean class="org.artifactory.addon.debian.remote.DebianCacheExpiryStrategy"/>
+</beans>

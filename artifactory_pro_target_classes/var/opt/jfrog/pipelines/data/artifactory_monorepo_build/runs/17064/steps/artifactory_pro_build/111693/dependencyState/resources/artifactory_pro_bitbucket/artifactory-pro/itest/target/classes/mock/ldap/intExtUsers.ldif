@@ -1,0 +1,122 @@
+version: 1
+dn: dc=jfrog,dc=org
+objectClass: organization
+objectClass: dcObject
+objectClass: top
+dc: jfrog
+o: jFrog.org
+
+dn: ou=People,dc=jfrog,dc=org
+objectClass: organizationalUnit
+objectClass: top
+description: All people in organisation
+ou: People
+
+dn: uid=yossis,ou=People,dc=jfrog,dc=org
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: Yossi Shaul
+mail: yossis@alphacsp.com
+mail: yossis@jfrog.org
+ou: dev
+sn: Shaul
+uid: yossis
+userpassword:: cGFzc3dvcmQ=
+
+dn: uid=ldap1,ou=People,dc=jfrog,dc=org
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: Momo De Toto
+mail: momo@alphacsp.com
+ou: test
+sn: De Toto
+uid: ldap1
+userpassword:: MTIzNA==
+
+dn: ou=groups,dc=jfrog,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: groups
+
+dn: cn=dev,ou=groups,dc=jfrog,dc=org
+objectClass: room
+objectClass: top
+cn: dev
+description: Developer Group
+
+dn: cn=repoadmin,ou=groups,dc=jfrog,dc=org
+objectClass: room
+objectClass: top
+cn: repoadmin
+description: Artifactory Administrators
+
+dn: cn=qa,ou=groups,dc=jfrog,dc=org
+objectClass: room
+objectClass: top
+cn: qa
+description: QA Group
+
+dn: ou=internalUsers,dc=jfrog,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: internalUsers
+
+dn: uid=intUser,ou=internalUsers,dc=jfrog,dc=org
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: intUser
+ou: repoadmin
+sn: user
+uid: intUser
+userpassword:: cGFzc3dvcmQ=
+
+dn: ou=externalUsers,dc=jfrog,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: externalUsers
+
+dn: uid=extUser,ou=externalUsers,dc=jfrog,dc=org
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: extUser
+ou: qa
+ou: dev
+sn: user
+uid: extUser
+userpassword:: cGFzc3dvcmQ=
+
+dn: uid=attacker,ou=People,dc=jfrog,dc=org
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+objectClass: javaNamingReference
+cn: Attacker Yo
+mail: attacker@jfrog.org
+javaClassName: org.artifactory.itest.ldap.LdapAttack
+javaFactory: org.artifactory.itest.ldap.LdapAttack
+ou: dev
+sn: Shaul
+uid: attacker
+userpassword:: cGFzc3dvcmQ=
+
+dn: uid=tester,ou=People,dc=jfrog,dc=org
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: Tester Test
+mail: tester@alphacsp.com
+mail: tester@jfrog.org
+ou: dev
+sn: tester
+uid: tester
+userpassword:: cGFzc3dvcmQ=

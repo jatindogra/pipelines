@@ -30,6 +30,7 @@ pipelines:
            - name: step_2
         execution:
          onStart:
+           - printenv
            - stateFolder='restoredState'
            - mkdir -p $stateFolder
            - mkdir -p $stateFolder/classes

@@ -37,6 +37,7 @@ pipelines:
            - pushd $stateFolder/classes
            - ls
          onExecute:
+           - sleep 20m
            - echo "Hello world"
 
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2018 JFrog Ltd. All rights reserved.
+  ~ JFROG PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean class="org.artifactory.addon.docker.DockerAddonImpl" primary="true"/>
+    <bean class="org.artifactory.addon.docker.DockerServiceImpl"/>
+    <bean class="org.artifactory.addon.docker.bintray.DockerBintrayInfoProvider"/>
+    <bean class="org.artifactory.addon.docker.bintray.DockerV1BintrayPusherImpl"/>
+    <bean class="org.artifactory.addon.docker.bintray.DockerV2BintrayPusherImpl"/>
+    <bean class="org.artifactory.addon.docker.rest.DockerV2AuthenticationFilter"/>
+    <bean class="org.artifactory.addon.docker.rest.v2.repo.expirable.DockerManifestIndexChecker"/>
+    <bean class="org.artifactory.addon.docker.rest.v2.repo.expirable.DockerTagsIndexChecker"/>
+    <bean class="org.artifactory.addon.docker.rest.v2.repo.interceptor.DockerRemoteInterceptor"/>
+    <bean class="org.artifactory.addon.docker.rest.v2.repo.cleanup.DockerTagCleanerInterceptor"/>
+    <bean class="org.artifactory.addon.docker.rest.v2.repo.trashable.DockerUploadsNonTrashable"/>
+</beans>

@@ -21,7 +21,7 @@ pipelines:
            - printenv
            - ls
            - pushd $res_jatin_gitrepo2_resourcePath/test
-           - add_run_files $res_jatin_gitrepo2_resourcePath/test run_state
+           - add_run_files $res_jatin_gitrepo2_resourcePath/artifactory_pro_target_classes artifactory_pro_target_classes
 
       - name: step_3
         type: Bash
@@ -33,7 +33,7 @@ pipelines:
            - stateFolder='restoredState'
            - mkdir -p $stateFolder
            - mkdir -p $stateFolder/classes
-           - restore_run_files run_state $stateFolder/classes
+           - restore_run_files artifactory_pro_target_classes $stateFolder/classes
            - pushd $stateFolder/classes
            - ls
          onExecute:

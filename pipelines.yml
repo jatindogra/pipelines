@@ -16,22 +16,22 @@ pipelines:
            - sleep 120
            - echo "hello"
 
-      - name: step_3
-        type: Bash
-        configuration:
-         inputSteps:
-           - name: step_2
-        execution:
-         onExecute:
-           - echo "Hello world"
+#       - name: step_3
+#         type: Bash
+#         configuration:
+#          inputSteps:
+#            - name: step_2
+#         execution:
+#          onExecute:
+#            - echo "Hello world"
            
-      - name: step_4
-        type: Bash
-        configuration:
-         inputSteps:
-           - name: step_2
-        execution:
-         onExecute:
-           - echo "Hello world"
+#       - name: step_4
+#         type: Bash
+#         configuration:
+#          inputSteps:
+#            - name: step_2
+#         execution:
+#          onExecute:
+#            - echo "Hello world"
 
  

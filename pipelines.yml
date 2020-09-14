@@ -13,6 +13,7 @@ pipelines:
         type: Bash
         execution:
          onExecute:
+           - sleep 120
            - echo "hello"
 
       - name: step_3

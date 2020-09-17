@@ -17,6 +17,7 @@ pipelines:
         execution:
          onExecute:
            - echo "hello"
+
       - name: step_1
         type: Bash
         configuration:

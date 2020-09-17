@@ -9,11 +9,19 @@ resources:
 pipelines:
   - name: jatin_custom_pipelines
     steps:
-      - name: step_1
+      - name: step_0
         type: Bash
         configuration:
          inputResources:
            - name: jatin_gitrepo2
+        execution:
+         onExecute:
+           - echo "hello"
+      - name: step_1
+        type: Bash
+        configuration:
+         inputSteps:
+           - name: step_0
         execution:
          onExecute:
            - echo "hello"
@@ -21,8 +29,8 @@ pipelines:
       - name: step_2
         type: Bash
         configuration:
-         inputResources:
-           - name: jatin_gitrepo2
+         inputSteps:
+           - name: step_0
         execution:
          onExecute:
            - echo "hello"
@@ -30,8 +38,8 @@ pipelines:
       - name: step_3
         type: Bash
         configuration:
-         inputResources:
-           - name: jatin_gitrepo2
+         inputSteps:
+           - name: step_0
         execution:
          onExecute:
            - echo "Hello world"
@@ -39,8 +47,8 @@ pipelines:
       - name: step_4
         type: Bash
         configuration:
-         inputResources:
-           - name: jatin_gitrepo2
+         inputSteps:
+           - name: step_0
         execution:
          onExecute:
            - echo "Hello world"
@@ -48,8 +56,8 @@ pipelines:
       - name: step_5
         type: Bash
         configuration:
-         inputResources:
-           - name: jatin_gitrepo2
+         inputSteps:
+           - name: step_0
         execution:
          onExecute:
            - echo "Hello world"

@@ -45,7 +45,7 @@ pipelines:
          onExecute:
            - echo "Hello world"
 
-       - name: step_5
+      - name: step_5
         type: Bash
         configuration:
          inputResources:

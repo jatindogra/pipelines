@@ -1,64 +1,112 @@
-resources:
-  - name: jatin_gitrepo2
-    type: GitRepo
-    configuration:
-      gitProvider: jatin_gh
-      path: jatindogra/pipelines
-      branches:
-       include: ^master$
-pipelines:
-  - name: jatin_custom_pipelines
-    steps:
-      - name: step_0
-        type: Bash
-        configuration:
-         inputResources:
-           - name: jatin_gitrepo2
-        execution:
-         onExecute:
-           - echo "hello"
+# resources:
+#   - name: jatin_gitrepo2
+#     type: GitRepo
+#     configuration:
+#       gitProvider: jatin_gh
+#       path: jatindogra/pipelines
+#       branches:
+#        include: ^master$
+# pipelines:
+#   - name: jatin_custom_pipelines
+#     steps:
+#       - name: step_0
+#         type: Bash
+#         configuration:
+#          inputResources:
+#            - name: jatin_gitrepo2
+#         execution:
+#          onExecute:
+#            - echo "hello"
 
-      - name: step_1
-        type: Bash
-        configuration:
-         inputSteps:
-           - name: step_0
-        execution:
-         onExecute:
-           - echo "hello"
+#       - name: step_1
+#         type: Bash
+#         configuration:
+#          inputSteps:
+#            - name: step_0
+#         execution:
+#          onExecute:
+#            - echo "hello"
 
-      - name: step_2
-        type: Bash
-        configuration:
-         inputSteps:
-           - name: step_0
-        execution:
-         onExecute:
-           - echo "hello"
+#       - name: step_2
+#         type: Bash
+#         configuration:
+#          inputSteps:
+#            - name: step_0
+#         execution:
+#          onExecute:
+#            - echo "hello"
 
-      - name: step_3
-        type: Bash
-        configuration:
-         inputSteps:
-           - name: step_0
-        execution:
-         onExecute:
-           - echo "Hello world"
+#       - name: step_3
+#         type: Bash
+#         configuration:
+#          inputSteps:
+#            - name: step_0
+#         execution:
+#          onExecute:
+#            - echo "Hello world"
            
-      - name: step_4
-        type: Bash
-        configuration:
-         inputSteps:
-           - name: step_0
-        execution:
-         onExecute:
-           - echo "Hello world"
+#       - name: step_4
+#         type: Bash
+#         configuration:
+#          inputSteps:
+#            - name: step_0
+#         execution:
+#          onExecute:
+#            - echo "Hello world"
 
-      - name: step_5
-        type: Bash
-        configuration:
-         inputSteps:
-           - name: step_0
-        execution:
-         onExecute:
-           - echo "Hello world"
+#       - name: step_5
+#         type: Bash
+#         configuration:
+#          inputSteps:
+#            - name: step_0
+#         execution:
+#          onExecute:
+#            - echo "Hello world"
+resources:
+  - name: load_azure
+    type: CronTrigger
+    configuration:
+      interval: '*/2 * * * *'
+
+name: load_pipeline
+steps:
+  - name: load_pipelines_test1
+    type: Bash
+    configuration:
+      inputResources:
+        - name: load_azure
+    execution:
+      onExecute:
+        - echo "This will run on one machine every 5 mins"
+  - name: load_pipelines_test2
+    type: Bash
+    configuration:
+      inputResources:
+        - name: load_azure
+    execution:
+      onExecute:
+        - echo "This will run on one machine every 5 mins"
+  - name: load_pipelines_test3
+    type: Bash
+    configuration:
+      inputResources:
+        - name: load_azure
+    execution:
+      onExecute:
+        - echo "This will run on one machine every 5 mins"
+  - name: load_pipelines_test4
+    type: Bash
+    configuration:
+      inputResources:
+        - name: load_azure
+    execution:
+      onExecute:
+        - echo "This will run on one machine every 5 mins"
+  - name: load_pipelines_test5
+    type: Bash
+    configuration:
+      inputResources:
+        - name: load_azure
+    execution:
+      onExecute:
+        - echo "This will run on one machine every 5 mins"

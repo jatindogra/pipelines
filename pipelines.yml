@@ -68,45 +68,51 @@ resources:
     configuration:
       interval: '*/2 * * * *'
 
-name: load_pipeline
-steps:
-  - name: load_pipelines_test1
-    type: Bash
-    configuration:
-      inputResources:
-        - name: load_azure
-    execution:
-      onExecute:
-        - echo "This will run on one machine every 5 mins"
-  - name: load_pipelines_test2
-    type: Bash
-    configuration:
-      inputResources:
-        - name: load_azure
-    execution:
-      onExecute:
-        - echo "This will run on one machine every 5 mins"
-  - name: load_pipelines_test3
-    type: Bash
-    configuration:
-      inputResources:
-        - name: load_azure
-    execution:
-      onExecute:
-        - echo "This will run on one machine every 5 mins"
-  - name: load_pipelines_test4
-    type: Bash
-    configuration:
-      inputResources:
-        - name: load_azure
-    execution:
-      onExecute:
-        - echo "This will run on one machine every 5 mins"
-  - name: load_pipelines_test5
-    type: Bash
-    configuration:
-      inputResources:
-        - name: load_azure
-    execution:
-      onExecute:
-        - echo "This will run on one machine every 5 mins"
+pipelines:
+  - name: load_pipeline
+    steps:   
+      - name: load_pipelines_test1
+        type: Bash
+        configuration:
+          inputResources:
+            - name: load_azure
+              
+        execution:
+          onExecute:
+            - echo "This will run on one machine every 5 mins"
+      - name: load_pipelines_test2
+        type: Bash
+        configuration:
+          inputResources:
+            - name: load_azure
+              
+        execution:
+          onExecute:
+            - echo "This will run on one machine every 5 mins"
+      - name: load_pipelines_test3
+        type: Bash
+        configuration:
+          inputResources:
+            - name: load_azure
+              
+        execution:
+          onExecute:
+            - echo "This will run on one machine every 5 mins"
+      - name: load_pipelines_test4
+        type: Bash
+        configuration:
+          inputResources:
+            - name: load_azure
+              
+        execution:
+          onExecute:
+            - echo "This will run on one machine every 5 mins"
+      - name: load_pipelines_test5
+        type: Bash
+        configuration:
+          inputResources:
+            - name: load_azure
+              
+        execution:
+          onExecute:
+            - echo "This will run on one machine every 5 mins"

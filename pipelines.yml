@@ -80,7 +80,6 @@ pipelines:
         execution:
           onExecute:
             - echo "This will run on one machine every 5 mins"
-            - sleep 1m
       - name: load_pipelines_test2
         type: Bash
         configuration:
@@ -90,7 +89,6 @@ pipelines:
         execution:
           onExecute:
             - echo "This will run on one machine every 5 mins"
-            - sleep 1m
       - name: load_pipelines_test3
         type: Bash
         configuration:
@@ -100,7 +98,6 @@ pipelines:
         execution:
           onExecute:
             - echo "This will run on one machine every 5 mins"
-            - sleep 1m
       - name: load_pipelines_test4
         type: Bash
         configuration:
@@ -110,7 +107,6 @@ pipelines:
         execution:
           onExecute:
             - echo "This will run on one machine every 5 mins"
-            - sleep 1m
       - name: load_pipelines_test5
         type: Bash
         configuration:
@@ -120,4 +116,3 @@ pipelines:
         execution:
           onExecute:
             - echo "This will run on one machine every 5 mins"
-            - sleep 1m

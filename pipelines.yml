@@ -80,39 +80,39 @@ pipelines:
         execution:
           onExecute:
             - echo "This will run on one machine every 5 mins"
-      - name: load_pipelines_test2
-        type: Bash
-#         configuration:
-#           inputResources:
-#             - name: load_azure
+#       - name: load_pipelines_test2
+#         type: Bash
+# #         configuration:
+# #           inputResources:
+# #             - name: load_azure
               
-        execution:
-          onExecute:
-            - echo "This will run on one machine every 5 mins"
-      - name: load_pipelines_test3
-        type: Bash
-#         configuration:
-#           inputResources:
-#             - name: load_azure
+#         execution:
+#           onExecute:
+#             - echo "This will run on one machine every 5 mins"
+#       - name: load_pipelines_test3
+#         type: Bash
+# #         configuration:
+# #           inputResources:
+# #             - name: load_azure
               
-        execution:
-          onExecute:
-            - echo "This will run on one machine every 5 mins"
-      - name: load_pipelines_test4
-        type: Bash
-#         configuration:
-#           inputResources:
-#             - name: load_azure
+#         execution:
+#           onExecute:
+#             - echo "This will run on one machine every 5 mins"
+#       - name: load_pipelines_test4
+#         type: Bash
+# #         configuration:
+# #           inputResources:
+# #             - name: load_azure
               
-        execution:
-          onExecute:
-            - echo "This will run on one machine every 5 mins"
-      - name: load_pipelines_test5
-        type: Bash
-#         configuration:
-#           inputResources:
-#             - name: load_azure
+#         execution:
+#           onExecute:
+#             - echo "This will run on one machine every 5 mins"
+#       - name: load_pipelines_test5
+#         type: Bash
+# #         configuration:
+# #           inputResources:
+# #             - name: load_azure
               
-        execution:
-          onExecute:
-            - echo "This will run on one machine every 5 mins"
+#         execution:
+#           onExecute:
+#             - echo "This will run on one machine every 5 mins"

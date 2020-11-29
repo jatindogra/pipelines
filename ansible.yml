@@ -1,6 +1,6 @@
 ---
 - name: print hello world
-  hosts: all
+  hosts: localhost
   tasks:
   - name: "Test Output"
     debug:

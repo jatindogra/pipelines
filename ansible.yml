@@ -1,7 +1,18 @@
+# ---
+# - name: print hello world
+#   #hosts: localhost
+#   tasks:
+#   - name: "Test Output"
+#     debug:
+#       msg: "Hello World"
 ---
-- name: print hello world
-  #hosts: localhost
-  tasks:
-  - name: "Test Output"
-    debug:
-      msg: "Hello World"
+  - name: "Playing with Ansible and Git"
+    hosts: localhost
+    connection: local 
+    tasks:
+
+    - name: "just execute a ls -lrt command"
+      shell: "ls -lrt"
+      register: "output"
+
+    - debug: var=output.stdout_lines

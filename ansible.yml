@@ -1,3 +1,4 @@
+---
 - name: print hello world
   hosts: all
   tasks:

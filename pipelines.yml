@@ -80,8 +80,9 @@ pipelines:
           onExecute:
             - echo "This will run on one machine every 5 mins"
             - pushd $res_jatin_gitrepo2_resourcePath/
-            - ansible-playbook ansible.yml --check
+            - ansible-playbook ansible.yml
             - popd
+            - cat /etc/ansible/hosts
 #       - name: load_pipelines_test2
 #         type: Bash
 # #         configuration:

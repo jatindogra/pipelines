@@ -74,6 +74,15 @@ pipelines:
       - name: load_pipelines_test1
         type: Bash
         configuration:
+          runtime:      
+            type: image
+            image:
+              custom:
+                name: jatin 
+                tag: 1.0.9
+                options: "-e HOME=/root"
+                registry: art            # if custom image is private, an integration is required for authentication
+                sourceRepository: jatinart     # required if registry is Artifactory. e.g. docker-local
           inputResources:
             - name: jatin_gitrepo2
         execution:

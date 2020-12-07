@@ -6,6 +6,13 @@ resources:
       path: jatindogra/pipelines
       branches:
        include: ^master$
+  - name: jatin_image
+    type:      Image
+    configuration:
+      registry: jatin
+      sourceRepository: jatinart  # required if registry is Artifactory
+      imageName: jatinimage
+      imageTag: 1.0.0
 # pipelines:
 #   - name: jatin_custom_pipelines
 #     steps:
@@ -74,10 +81,9 @@ pipelines:
       - name: load_pipelines_test1
         type: Bash
         configuration:
-          integrations:
-            - name: smpt    # required if registry is Artifactory. e.g. docker-local
           inputResources:
             - name: jatin_gitrepo2
+            - name: jatin_image
         execution:
           onExecute:
             - echo "This will run on one machine every 5 mins"

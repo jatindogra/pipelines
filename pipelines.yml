@@ -83,12 +83,11 @@ pipelines:
         configuration:
           inputResources:
             - name: jatin_gitrepo2
-            - name: jatin_image
         execution:
           onExecute:
             - echo "This will run on one machine every 5 mins"
-            - send_notification smpt --recipients "dogra.jatin5@gmail.com" --subject "Build Succeeded" --body "built docker image 112.32.101.173:8081"
-#       - name: load_pipelines_test2
+            - sleep 5m
+  #       - name: load_pipelines_test2
 #         type: Bash
 # #         configuration:
 # #           inputResources:

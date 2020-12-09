@@ -76,8 +76,6 @@ pipelines:
         configuration:
           inputResources:
             - name: jatin_gitrepo2
-          integrations:
-            - name: jatin
         execution:
           onExecute:
             - echo "This will run on one machine every 5 mins"

@@ -74,14 +74,13 @@ pipelines:
       - name: load_pipelines_test1
         type: Bash
         configuration:
-#           runtime:
-#             type: host
+          runtime:
+            type: host
           inputResources:
             - name: jatin_gitrepo2
         execution:
           onExecute:
             - echo "This will run on one machine every 5 mins"
-            - sleep 5m
   #       - name: load_pipelines_test2
 #         type: Bash
 # #         configuration:

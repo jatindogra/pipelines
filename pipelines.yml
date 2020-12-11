@@ -84,7 +84,7 @@ pipelines:
           runtime:
             type: host
           integrations:
-            jatinimg
+            - name: jatinimg
           inputResources:
             - name: jatinimg
             - name: jatin_gitrepo2

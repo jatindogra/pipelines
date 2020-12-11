@@ -83,10 +83,10 @@ pipelines:
         configuration:
           runtime:
             type: host
-          integrations:
-            - name: jatinart
+          #integrations:
+            #- name: jatinart
           inputResources:
-            #- name: jatinimg
+            - name: jatinimg
             - name: jatin_gitrepo2
         execution:
           onExecute:

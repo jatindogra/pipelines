@@ -6,7 +6,7 @@ resources:
       path: jatindogra/pipelines
       branches:
        include: ^master$
-    - name: jatinimg
+   - name: jatinimg
      type:      Image
      configuration:
        registry: jatinart

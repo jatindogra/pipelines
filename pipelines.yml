@@ -6,13 +6,13 @@ resources:
       path: jatindogra/pipelines
       branches:
        include: ^master$
-  - name: jatinimg
-    type:      Image
-    configuration:
-      registry: jatinart
-      sourceRepository: jatinart   # required if registry is Artifactory
-      imageName: jatin/jatin
-      imageTag: 1.0.0
+#   - name: jatinimg
+#     type:      Image
+#     configuration:
+#       registry: jatinart
+#       sourceRepository: jatinart   # required if registry is Artifactory
+#       imageName: jatin/jatin
+#       imageTag: 1.0.0
 # pipelines:
 #   - name: jatin_custom_pipelines
 #     steps:
@@ -81,8 +81,8 @@ pipelines:
       - name: load_pipelines_test1
         type: Bash
         configuration:
-#           integrations:
-#             - name: jatinart
+          runtime:
+            type: host
           inputResources:
             #- name: jatinimg
             - name: jatin_gitrepo2

@@ -85,9 +85,9 @@ pipelines:
             type: host
           integrations:
             - name: jatinart
-          inputResources:
-#             - name: jatinimg
-            - name: jatin_gitrepo2
+#           inputResources:
+# #             - name: jatinimg
+#             - name: jatin_gitrepo2
         execution:
           onExecute:
             - echo "This will run on one machine every 5 mins"

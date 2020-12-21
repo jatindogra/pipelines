@@ -81,8 +81,8 @@ pipelines:
       - name: load_pipelines_test1
         type: Bash
         configuration:
-#           runtime:
-#             type: host
+          runtime:
+            type: host
           integrations:
             - name: jatinart
           inputResources:

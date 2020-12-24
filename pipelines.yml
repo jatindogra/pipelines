@@ -81,10 +81,10 @@ pipelines:
       - name: load_pipelines_test1
         type: Bash
         configuration:
-#           runtime:
-#             type: host
-          integrations:
-            - name: jatinart
+          runtime:
+            type: host
+#           integrations:
+#             - name: jatinart
 #           inputResources:
 # #             - name: jatinimg
 #             - name: jatin_gitrepo2

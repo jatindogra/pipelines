@@ -80,9 +80,9 @@ pipelines:
     steps:   
       - name: load_pipelines_ps
         type: Bash
-        configuration:
-          runtime:
-            type: host
+#         configuration:
+#           runtime:
+#             type: host
 #           integrations:
 #             - name: jatinart
 #           inputResources:

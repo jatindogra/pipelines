@@ -79,7 +79,7 @@ pipelines:
   - name: load_pipeline
     steps:   
       - name: load_pipelines_ps
-        type: Bash
+        type: PowerShell
 #         configuration:
 #           runtime:
 #             type: host

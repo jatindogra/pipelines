@@ -78,7 +78,7 @@ resources:
 pipelines:
   - name: load_pipeline
     steps:   
-      - name: load_pipelines_ps
+      - name: load_pipelines
         type: PowerShell
 #         configuration:
 #           runtime:

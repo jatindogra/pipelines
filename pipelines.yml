@@ -80,8 +80,8 @@ pipelines:
     steps:   
       - name: load_pipelines_bash
         type: Bash
-        configuration:
-          nodePool: jatin_k8s
+#         configuration:
+#           nodePool: jatin_k8s
 #           integrations:
 #             - name: jatinart
 #           inputResources:

@@ -78,8 +78,8 @@ resources:
 pipelines:
   - name: load_pipeline
     steps:   
-      - name: load_pipelines
-        type: PowerShell
+      - name: load_pipelines_bash
+        type: Bash
 #         configuration:
 #           runtime:
 #             type: host

@@ -80,9 +80,8 @@ pipelines:
     steps:   
       - name: load_pipelines_bash
         type: Bash
-#         configuration:
-#           runtime:
-#             type: host
+        configuration:
+          nodePool: jatin_k8s
 #           integrations:
 #             - name: jatinart
 #           inputResources:
@@ -91,6 +90,7 @@ pipelines:
         execution:
           onExecute:
             - echo "This will run on one machine every 5 mins"
+            - sleep 5m
   #       - name: load_pipelines_test2
 #         type: Bash
 # #         configuration:

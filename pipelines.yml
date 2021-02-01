@@ -9,8 +9,6 @@ resources:
       
 pipelines:
   - name: load_pipeline
-    configuration:
-      nodePool: jatintest   
     steps:
 #       - name: step_1
 #         type: Bash

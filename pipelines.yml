@@ -8,7 +8,7 @@ resources:
 #       externalCI: jenkins
       
 pipelines:
-  - name: pipeline_hello_world_2
+  - name: load_pipeline
     configuration:
       nodePool: jatintest   
     steps:

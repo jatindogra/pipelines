@@ -80,13 +80,13 @@ pipelines:
     steps:   
       - name: load_pipelines_bash
         type: Bash
-#         configuration:
+        configuration:
 #           nodePool: jatin_k8s
 #           integrations:
 #             - name: jatinart
-#           inputResources:
-# #             - name: jatinimg
-#             - name: jatin_gitrepo2
+          outputResources:
+#             - name: jatinimg
+            - name: jatin_gitrepo2
         execution:
           onExecute:
             - echo "This will run on one machine every 5 mins"

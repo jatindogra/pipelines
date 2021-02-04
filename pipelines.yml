@@ -92,7 +92,7 @@ pipelines:
         stepMode: Bash
         configuration:
           inputSteps:
-            - name: load_pipeline
+            - name: load_pipelines_bash
         stepletMultipliers:
           environmentVariables:             # Sets of environment variables for steplets
             - animal:    dog                # - Set 1

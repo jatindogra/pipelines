@@ -81,15 +81,34 @@ pipelines:
       - name: load_pipelines_bash
         type: Bash
         configuration:
-#           nodePool: jatin_k8s
-#           integrations:
-#             - name: jatinart
-          outputResources:
-#             - name: jatinimg
+          inputResources:
             - name: jatin_gitrepo2
         execution:
           onExecute:
-            - echo "This will run on one machine every 5 mins"
+            - echo "Hello World"
+
+  - name: matrix_example
+    type: Matrix
+    stepMode: Bash
+    configuration:
+      inputSteps:
+        - name: load_pipeline
+
+    stepletMultipliers:
+      environmentVariables:             # Sets of environment variables for steplets
+        - animal:    dog                # - Set 1
+          mineral:   copper
+          vegetable: carrot
+        - animal:    goat               # - Set 2
+          mineral:   iron
+          vegetable: broccoli
+        - animal:    lizard             # - Set 3
+          mineral:   lead
+    execution:
+      onExecute:
+        - echo "I am executing matrix steplet ${steplet_id}"
+        - echo "Envs animal= $animal , mineral = $mineral , vegetable = $vegetable"
+ 
   #       - name: load_pipelines_test2
 #         type: Bash
 # #         configuration:

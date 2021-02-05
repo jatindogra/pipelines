@@ -128,7 +128,7 @@ pipelines:
             - echo "Hello World"
             - echo $current_runid
             - add_pipeline_variables prev_runid=$run_id
-            - write_output myPropertyBag commitSha=$commitSha runID=$current_runid
+            - write_output jatin_pb commitSha=$commitSha runID=$current_runid
   #       - name: load_pipelines_test2
 #         type: Bash
 # #         configuration:

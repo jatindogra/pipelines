@@ -9,7 +9,8 @@ resources:
   - name: jatin_pb
     type: PropertyBag
     configuration:
-      foo: bar
+      commitSha: 1
+      runID: 1      
 
 #   - name: jatinimg
 #     type:      Image
@@ -91,6 +92,8 @@ pipelines:
         execution:
           onExecute:
             - echo "Hello World"
+            - add_run_variables current_runid=$run_id
+            - add_run_variables commitSha=$res_jatin_gitrepo2_commitSha
 
       - name: matrix_example
         type: Matrix
@@ -98,8 +101,6 @@ pipelines:
         configuration:
           inputSteps:
             - name: load_pipelines_bash
-          outputResources:
-            - name: jatin_pb
         stepletMultipliers:
           environmentVariables:             # Sets of environment variables for steplets
             - animal:    dog                # - Set 1
@@ -115,6 +116,19 @@ pipelines:
             - echo "I am executing matrix steplet ${steplet_id}"
             - echo "Envs animal= $animal , mineral = $mineral , vegetable = $vegetable"
  
+      - name: bash_step
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: matrix_example
+          outputResources:
+            - name: jatin_pb
+        execution:
+          onExecute:
+            - echo "Hello World"
+            - echo $current_runid
+            - add_pipeline_variables prev_runid=$run_id
+            - write_output myPropertyBag commitSha=$commitSha runID=$current_runid
   #       - name: load_pipelines_test2
 #         type: Bash
 # #         configuration:

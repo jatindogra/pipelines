@@ -6,6 +6,11 @@ resources:
       path: jatindogra/pipelines
       branches:
        include: ^master$
+  - name: jatin_pb
+    type: PropertyBag
+    configuration:
+      foo: bar
+
 #   - name: jatinimg
 #     type:      Image
 #     configuration:
@@ -93,6 +98,8 @@ pipelines:
         configuration:
           inputSteps:
             - name: load_pipelines_bash
+          outputResources:
+            - name: jatin_pb
         stepletMultipliers:
           environmentVariables:             # Sets of environment variables for steplets
             - animal:    dog                # - Set 1
